@@ -14,7 +14,7 @@ jobs:
       - name: Install tfupgrade
         id: install
         run: | 
-          git clone https://github.com/minamijoyo/tfupdate ~/
+          git clone https://github.com/minamijoyo/tfupdate ~/tfupdate
           cd ~/tfupdate
           make install && make build
 
