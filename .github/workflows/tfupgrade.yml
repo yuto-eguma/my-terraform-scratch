@@ -14,15 +14,15 @@ jobs:
       - name: Install tfupgrade
         id: install
         run: | 
-          git clone https://github.com/minamijoyo/tfupdate ~/.tfupdate
-          cd ~/.tfupdate/
-          make install
+          git clone https://github.com/minamijoyo/tfupdate ~/
+          cd ~/tfupdate
+          make install && make build
 
       - name: Upgrade Terraform
         id: upgrade
         run: |
-          ~/.tfupdate/tfupdate/tfupdate terraform -r ./
-          echo $(~/.tfupdate/tfupdate release latest hashicorp/terraform) > infra/.terraform-version
+          ~/tfupdate/bin/tfupdate terraform -r ./
+          echo $(~/tfupdate/bin/tfupdate release latest hashicorp/terraform) > infra/.terraform-version
           LATEST_TERRAFORM_VERSION=$(cat infra/.terraform-version)
           echo "::set-output name=LATEST_TERRAFORM_VERSION::${LATEST_TERRAFORM_VERSION}"
           
