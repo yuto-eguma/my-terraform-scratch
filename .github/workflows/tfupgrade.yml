@@ -27,6 +27,7 @@ jobs:
           echo "::set-output name=LATEST_TERRAFORM_VERSION::${LATEST_TERRAFORM_VERSION}"
           
       - name: Create commit if needs
+        id: commit
         run: |
           git config user.name ${{ secrets.BOT_USER_NAME }}
           git config user.email ${{ secrets.BOT_EMAIL }}
