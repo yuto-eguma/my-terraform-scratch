@@ -30,7 +30,7 @@ jobs:
         run: |
           git config user.name ${{ secrets.BOT_USER_NAME }}
           git config user.email ${{ secrets.BOT_EMAIL }}
-          git add infra/.terraform-version
+          git add -u
           git commit -m "upgrade terrafrom" || echo "The version is the latest"
 
       - name: Create Pull Request
