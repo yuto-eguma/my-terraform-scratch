@@ -15,7 +15,7 @@ jobs:
         id: install
         run: | 
           git clone https://github.com/minamijoyo/tfupdate ~/.tfupdate
-          cd ~.tfupdate/
+          cd ~/.tfupdate/
           make install
           tfupdate --version
 
