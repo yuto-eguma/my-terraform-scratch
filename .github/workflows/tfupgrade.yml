@@ -21,7 +21,7 @@ jobs:
       - name: Upgrade Terraform
         id: upgrade
         run: |
-          ~/.tfupdate/tfupdate terraform -r ./
+          ~/.tfupdate/tfupdate/tfupdate terraform -r ./
           echo $(~/.tfupdate/tfupdate release latest hashicorp/terraform) > infra/.terraform-version
           LATEST_TERRAFORM_VERSION=$(cat infra/.terraform-version)
           echo "::set-output name=LATEST_TERRAFORM_VERSION::${LATEST_TERRAFORM_VERSION}"
